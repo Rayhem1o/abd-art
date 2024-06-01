@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <!-----------Home------------>
+  <!-----------Home section------------>
   <div id="home">
     <nav id="header">
       <input type="checkbox" class="toggler" />
@@ -46,7 +46,7 @@
       </div>
     </div>
   </div>
-  <!-----------about------------->
+  <!-----------about section------------->
   <div id="about">
     <div class="container">
       <div class="row">
@@ -104,7 +104,7 @@
       </div>
     </div>
   </div>
-  <!------------services------------->
+  <!------------services section------------->
   <div id="services">
     <div class="container">
       <h1 class="sub-title">Services</h1>
@@ -138,7 +138,7 @@
       </div>
     </div>
   </div>
-  <!-------------portfolio------------->
+  <!-------------portfolio section------------->
   <div id="portfolio">
     <div class="container">
       <h1 class="sub-title">My Work</h1>
@@ -182,7 +182,7 @@
       </div>
     </div>
   </div>
-  <!------------------contact--------------------->
+  <!------------------contact section--------------------->
   <div id="contact">
     <div class="container">
       <div class="row">
@@ -203,11 +203,12 @@
               </svg></a>
           </div>
         </div>
+
         <div class="contact-right">
-          <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input id="email" type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+          <form id="contactForm">
+            <input type="text" id="name" placeholder="Name" name="name" required>
+            <input type="email" id="email" placeholder="Email" name="email" required>
+            <textarea name="message" rows="6" id="message" placeholder="Your Message" required></textarea>
             <button type="submit" class="btn">Submit</button>
           </form>
         </div>
@@ -215,7 +216,7 @@
       </div>
     </div>
   </div>
-  <!----------------Copyright------------------>
+  <!----------------Copyright section------------------>
   <div id="copyright">
     <p>
       Made by
@@ -229,8 +230,10 @@
         </svg></i>
     </p>
   </div>
+  <!----------//Script Code--------->
 
   <script src="/script.js"></script>
+
 </body>
 
 </html>
