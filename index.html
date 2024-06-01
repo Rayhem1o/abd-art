@@ -204,13 +204,14 @@
           </div>
         </div>
         <div class="contact-right">
-          <form id="contactForm" method="POST" action="/send-email">
+          <form onsubmit="sendEmail(); reset(); return false;">
             <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
+            <input id="email" type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" rows="6" placeholder="Your Message"></textarea>
             <button type="submit" class="btn">Submit</button>
           </form>
         </div>
+
       </div>
     </div>
   </div>
@@ -230,7 +231,6 @@
   </div>
 
   <script src="/script.js"></script>
-  <script src="form-handler.js"></script>
 </body>
 
 </html>
