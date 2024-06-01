@@ -8,13 +8,8 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use((req, res, next) => {
-    console.log(`Request URL: ${req.url}`);
-    next();
-});
-
-app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 app.post('/send-email', (req, res) => {
     const { name, email, message } = req.body;
