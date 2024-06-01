@@ -1,0 +1,19 @@
+{
+  "name": "website_1-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.17.1",
+    "nodemailer": "^6.6.3"
+  }
+}
