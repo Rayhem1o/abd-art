@@ -210,7 +210,7 @@
             <input type="text" id="name" placeholder="Name" name="name" required>
             <input type="email" id="email" placeholder="Email" name="email" required>
             <textarea name="message" rows="6" id="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn" onclick="sendMail()">Submit</button>
+            <button type="submit" class="btn">Submit</button>
           </form>
         </div>
 
@@ -232,16 +232,11 @@
     </p>
   </div>
   <!----------//Script Code--------->
-
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="/script.js"></script>
-
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
   <script type="text/javascript">
     (function () {
-      emailjs.init({
-        publicKey: "hPIAYvNlz4GSCsdnh",
-      });
+      emailjs.init("hPIAYvNlz4GSCsdnh");
     })();
   </script>
 
