@@ -1,8 +1,8 @@
+//-------About/tab-titles----------------------------------------------------------------------------
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 
-function opentab(tabname) 
-{
+function opentab(tabname) {
   for (let tablink of tablinks) {
     tablink.classList.remove("active-link");
   }
@@ -13,8 +13,7 @@ function opentab(tabname)
   document.getElementById(tabname).classList.add("active-tab");
 }
 
-//<!-------Message Form------->
-
+//-------Submit Form----------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("contactForm");
 
