@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <!-----------Home section------------>
+  <!-----------Home Section------------>
   <div id="home">
     <nav id="header">
       <input type="checkbox" class="toggler" />
@@ -46,7 +46,7 @@
       </div>
     </div>
   </div>
-  <!-----------about section------------->
+  <!-----------About Section------------->
   <div id="about">
     <div class="container">
       <div class="row">
@@ -104,7 +104,7 @@
       </div>
     </div>
   </div>
-  <!------------services section------------->
+  <!------------Services Section------------->
   <div id="services">
     <div class="container">
       <h1 class="sub-title">Services</h1>
@@ -138,7 +138,7 @@
       </div>
     </div>
   </div>
-  <!-------------portfolio section------------->
+  <!-------------Portfolio Cection------------->
   <div id="portfolio">
     <div class="container">
       <h1 class="sub-title">My Work</h1>
@@ -182,10 +182,11 @@
       </div>
     </div>
   </div>
-  <!------------------contact section--------------------->
+  <!------------------Contact Section--------------------->
   <div id="contact">
     <div class="container">
       <div class="row">
+        <!----contact info----->
         <div class="contact-left">
           <h1 class="sub-title">Contact</h1>
           <p><img src="icones/send.svg" />abdalrazzakabboud50@gmail.com</p>
@@ -203,20 +204,20 @@
               </svg></a>
           </div>
         </div>
-
+        <!-----submit form----->
         <div class="contact-right">
           <form id="contactForm">
             <input type="text" id="name" placeholder="Name" name="name" required>
             <input type="email" id="email" placeholder="Email" name="email" required>
             <textarea name="message" rows="6" id="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Submit</button>
+            <button type="submit" class="btn" onclick="sendMail()">Submit</button>
           </form>
         </div>
 
       </div>
     </div>
   </div>
-  <!----------------Copyright section------------------>
+  <!----------------Copyright Section------------------>
   <div id="copyright">
     <p>
       Made by
@@ -233,6 +234,16 @@
   <!----------//Script Code--------->
 
   <script src="/script.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "hPIAYvNlz4GSCsdnh",
+      });
+    })();
+  </script>
 
 </body>
 
