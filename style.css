@@ -85,30 +85,30 @@ body {
   left: 7%;
 }
 
+.logo-icon-content a {
+  display: block;
+  position: relative;
+}
+
 .Logo {
   width: 100%;
   transition: opacity 0.16s;
 }
-.Logo:hover {
-  opacity: 0.7;
-}
-.Logo:active {
-  opacity: 1;
-}
-
-.logo-icon-content .img-10 {
+.img-10 {
   position: absolute;
   height: 80px;
   top: -15px;
   right: 60px;
-  cursor: pointer;
   transition: opacity 0.16s;
-  pointer-events: none;
+  pointer-events: none; /* Ensures only the link is clickable, not the image */
 }
-.logo-icon-content:hover .img-10 {
+.logo-icon-content a:hover .Logo,
+.logo-icon-content a:hover .img-10 {
   opacity: 0.7;
 }
-.logo-icon-content:active .img-10 {
+
+.logo-icon-content a:active .Logo,
+.logo-icon-content a:active .img-10 {
   opacity: 1;
 }
 
