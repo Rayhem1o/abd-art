@@ -19,7 +19,7 @@ function sendMail(){
   let parms = {
       name : document.getElementById("name").value,
       email : document.getElementById("email").value,
-      message : document.querySelector("textarea[name='message']").value,
+      message : document.getElementById("message").value,
   }
         
         emailjs.send("service_p82k6zu","template_iejonzt",parms).then(alert("Form submitted successfully!")) 
