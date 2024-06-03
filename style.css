@@ -48,13 +48,33 @@ body {
   padding: 10px 0 7% 0;
   font-size: 30px;
 }
+
 .header2-text p {
   color: white;
 }
+
 .header2-text h1 {
   font-size: 60px;
   margin-top: 40px;
 }
+/*----Services links----------*/
+.header2-text-S {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  padding: 10px 0 7% 0;
+  font-size: 30px;
+}
+.header2-text-S h1 {
+  font-size: 60px;
+  margin-top: 40px;
+  color: rgba(233, 254, 0, 0.891);
+}
+.header2-text-S p {
+  color: white;
+  font-size: 25px;
+}
+/*----End of Services links---*/
 .header2-text h1 span {
   color: rgba(233, 254, 0, 0.891);
 }
@@ -160,6 +180,7 @@ nav ul li a:hover::after {
 }
 .about-col-2 {
   flex-basis: 60%;
+  font-size: larger;
 }
 .sub-title {
   font-size: 60px;
@@ -175,7 +196,7 @@ nav ul li a:hover::after {
 }
 .tab-links {
   margin-right: 50px;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 500;
   position: relative;
 }
@@ -198,7 +219,7 @@ nav ul li a:hover::after {
 }
 .tab-contents ul li span {
   color: rgba(233, 254, 0, 0.891);
-  font-size: 14px;
+  font-size: 20px;
 }
 .tab-contents {
   display: none;
@@ -385,12 +406,12 @@ form .btn {
   font-weight: 300;
   margin-top: 20px;
 }
-#copyright i {
-  color: rgb(245, 241, 5);
-}
 #copyright a {
   text-decoration: none;
   color: chocolate;
+}
+.colored-emoji {
+  font-size: 13px;
 }
 /*--------------CSS for small Screens----------------------------------------------------------------------------------------------------------------------*/
 
