@@ -74,6 +74,14 @@ body {
   color: white;
   font-size: 25px;
 }
+.Status {
+  position: absolute;
+  top: 90%;
+  width: 100%;
+  padding: 10px 0 7% 0;
+  font-size: 20px;
+  color: rgb(201, 247, 201);
+}
 /*----End of Services links---*/
 .header2-text h1 span {
   color: rgba(233, 254, 0, 0.891);
