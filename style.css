@@ -130,13 +130,13 @@ body {
   transition: opacity 0.16s;
   pointer-events: none; /* Ensures only the link is clickable, not the image */
 }
-.logo-icon-content a:hover .Logo,
-.logo-icon-content a:hover .img-10 {
-  opacity: 0.7;
+.logo-icon-content a:hover .logo-Text-Abboud,
+.logo-icon-content a:hover .logo-Abd-sculpting {
+  opacity: 0.5;
 }
 
-.logo-icon-content a:active .Logo,
-.logo-icon-content a:active .img-10 {
+.logo-icon-content a:active .logo-Text-Abboud,
+.logo-icon-content a:active .logo-Abd-sculpting {
   opacity: 1;
 }
 /*-------END LOGO SECTION_______*/
