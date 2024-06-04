@@ -1,4 +1,4 @@
-//-------About/tab-titles----------------------------------------------------------------------------
+//-------About/tab-titles----------------------------------------------------------------------------//
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 
@@ -13,7 +13,7 @@ function opentab(tabname) {
   document.getElementById(tabname).classList.add("active-tab");
 }
 
-//-------Submit Form----------------------------------------------------------------------------------
+//-------Submit Form----------------------------------------------------------------------------------//
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("contactForm");
 
@@ -35,4 +35,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert("Form submission failed. Please try again.");
             });
     });
+});
+//---------Hamburger-Meneu-Kliking-Outside-to-close--------------------------------------------------//
+document.addEventListener('DOMContentLoaded', function() {
+  const toggler = document.querySelector('.toggler');
+  const menu = document.querySelector('.menu');
+
+  document.addEventListener('click', function(event) {
+    const isClickInsideMenu = menu.contains(event.target);
+    const isClickOnToggler = toggler.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickOnToggler && toggler.checked) {
+      toggler.checked = false;
+    }
+  });
 });

@@ -533,7 +533,6 @@ form .btn {
   }
 
   .toggler {
-    /* ALWAYS KEEPING THE TOGGLER OR THE CHECKBOX ON TOP OF EVERYTHING :  */
     display: block;
     z-index: 101;
     height: 50px;
@@ -559,8 +558,6 @@ form .btn {
     justify-content: center;
   }
 
-  /* CREATING THE MIDDLE LINE OF THE HAMBURGER : */
-
   .hamburger > div {
     position: relative;
     top: 10px;
@@ -570,9 +567,6 @@ form .btn {
     width: 60%;
     transition: all 0.4s ease;
   }
-
-  /* CREATING THE TOP AND BOTTOM LINES : 
-  TOP AT -10PX ABOVE THE MIDDLE ONE AND BOTTOM ONE IS 10PX BELOW THE MIDDLE: */
 
   .hamburger > div::before,
   .hamburger > div::after {
@@ -589,8 +583,6 @@ form .btn {
     top: 7px;
   }
 
-  /* IF THE TOGGLER IS IN ITS CHECKED STATE, THEN SETTING THE BACKGROUND OF THE MIDDLE LAYER TO COMPLETE BLACK AND OPAQUE :  */
-
   .toggler:checked + .hamburger > div {
     background: rgba(0, 0, 0, 0);
   }
@@ -600,8 +592,6 @@ form .btn {
     transform: rotate(45deg);
     background: rgb(255, 255, 255);
   }
-
-  /* AND ROTATING THE TOP AND BOTTOM LINES :  */
 
   .toggler:checked + .hamburger > div::after {
     top: 0;
@@ -618,8 +608,6 @@ form .btn {
     height: 200vh;
     transition: all 0.6s ease;
   }
-
-  /* IF THE TOGGLER IS CHECKED, THEN INCREASE THE WIDTH OF THE MENU TO 30% , CREATING A SMOOTH EFFECT :  */
 
   .toggler:checked ~ .menu {
     width: 200px;
@@ -641,8 +629,6 @@ form .btn {
     right: 5%;
   }
 
-  /* WHEN THE TOGGLER IS CHECKED, CHANGE THE VISIBILITY TO VISIBLE :  */
-
   .toggler:checked ~ .menu > ul {
     transition: visibility 0.9s ease;
     transition-delay: 0.3s;
@@ -656,6 +642,7 @@ form .btn {
     background: rgb(88, 215, 198);
   }
 }
+
 /*--------Visual-Arts-Galery-Grid------*/
 /* General styles */
 body {
