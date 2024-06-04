@@ -76,7 +76,7 @@ body {
 }
 .Status {
   position: absolute;
-  top: 60%;
+  top: 10%;
   width: 100%;
   padding: 10px 0 7% 0;
   font-size: 12px;
@@ -655,4 +655,83 @@ form .btn {
   nav ul li a::after {
     background: rgb(88, 215, 198);
   }
+}
+/*--------Visual-Arts-Galery-Grid------*/
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styles */
+#header,
+#header2,
+#header3 {
+  padding: 20px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.logo-icon-content {
+  text-align: center;
+}
+
+.Logo,
+.img-10 {
+  width: 100px;
+  margin: 10px;
+}
+
+/* Status section styles */
+.Status {
+  margin: 20px 0;
+}
+
+/* Gallery styles */
+#gallery {
+  padding: 20px;
+}
+
+#gallery h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery-item {
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Copyright section styles */
+#copyright {
+  text-align: center;
+  padding: 10px;
+  background-color: #161616;
+}
+
+.colored-emoji {
+  font-size: 1.2em;
 }
