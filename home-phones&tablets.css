@@ -1,0 +1,221 @@
+/*--------------CSS for small Screens----------------------------------------------------------------------------------------------------------------------*/
+
+.toggler,
+.hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 1145px) {
+  body {
+    background-image: url(Images/Masyaf2N-copy.svg);
+  }
+  #header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-wrap: wrap;
+    z-index: 100;
+    width: 100%;
+    height: 10dvh;
+    top: 0;
+  }
+  #header2-and-header3 {
+    display: flex;
+    justify-content: center;
+    height: 90dvh;
+    position: relative;
+  }
+  #header2 {
+    z-index: 5;
+    position: absolute;
+    height: 100%;
+  }
+  .header2-text {
+    position: absolute;
+    top: 40%;
+  }
+  .header2-text h1 {
+    font-size: 30px;
+  }
+  .header2-text p {
+    font-size: 18px;
+    color: white;
+  }
+  #header3 {
+    height: 100%;
+  }
+  .header3-png {
+    background-image: url(Images/8.png);
+    background-position: right;
+    width: 100%;
+    height: 100%;
+  }
+  #about {
+    padding: 0 0 0 0;
+    color: rgb(232, 232, 232);
+  }
+  #services {
+    padding: 30px 0 0 0;
+  }
+  #portfolio {
+    padding: 30px 0 0 0;
+  }
+  #contact {
+    padding: 30px 0 0 0;
+  }
+
+  .sub-title {
+    font-size: 40px;
+  }
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 100%;
+  }
+  .about-col-1 {
+    margin-bottom: 30px;
+  }
+  .about-col-2 {
+    font-size: 14px;
+  }
+  .tab-links {
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  .contact-left,
+  .contact-right {
+    flex-basis: 100%;
+  }
+  .contact-left {
+    font-size: 15px;
+  }
+  .contact-left p img {
+    margin-right: 8px;
+  }
+  .copyright {
+    font-size: 14px;
+  }
+
+  .logo-icon-content {
+    width: 150px;
+    position: relative;
+    cursor: pointer;
+    top: 22px;
+    left: 7%;
+  }
+  .logo-icon-content .logo-Abd-sculpting {
+    height: 50px;
+    top: -20px;
+    right: 22px;
+  }
+
+  .toggler {
+    display: block;
+    z-index: 101;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .hamburger {
+    z-index: 100;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    height: 50px;
+    width: 50px;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger > div {
+    position: relative;
+    top: 10px;
+    right: 8px;
+    background: white;
+    height: 2px;
+    width: 60%;
+    transition: all 0.4s ease;
+  }
+
+  .hamburger > div::before,
+  .hamburger > div::after {
+    content: "";
+    position: absolute;
+    top: -7px;
+    background: white;
+    width: 100%;
+    height: 2px;
+    transition: all 0.4s ease;
+  }
+
+  .hamburger > div::after {
+    top: 7px;
+  }
+
+  .toggler:checked + .hamburger > div {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  .toggler:checked + .hamburger > div::before {
+    top: 0;
+    transform: rotate(45deg);
+    background: rgb(255, 255, 255);
+  }
+
+  .toggler:checked + .hamburger > div::after {
+    top: 0;
+    transform: rotate(135deg);
+    background: rgb(255, 255, 255);
+  }
+
+  .menu {
+    z-index: 99;
+    position: absolute;
+    background: rgba(172, 25, 8, 0.834);
+    right: 0;
+    width: 0;
+    height: 200vh;
+    transition: all 0.6s ease;
+  }
+
+  .toggler:checked ~ .menu {
+    width: 200px;
+  }
+  .menu > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    top: 130px;
+    right: 10px;
+    margin-right: 0;
+    visibility: hidden;
+  }
+  .menu > ul > li > a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    right: 5%;
+  }
+
+  .toggler:checked ~ .menu > ul {
+    transition: visibility 0.9s ease;
+    transition-delay: 0.3s;
+    visibility: visible;
+  }
+
+  .toggler:checked ~ .menu > ul > li > a:hover {
+    color: rgb(67, 168, 154);
+  }
+  nav ul li a::after {
+    background: rgb(88, 215, 198);
+  }
+}

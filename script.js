@@ -13,7 +13,7 @@ function opentab(tabname) {
   document.getElementById(tabname).classList.add("active-tab");
 }
 
-//-------Submit Form----------------------------------------------------------------------------------//
+//-------Submit-Form----------------------------------------------------------------------------------//
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("contactForm");
 
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     });
 });
-//---------Hamburger-Meneu-Kliking-Outside-to-close--------------------------------------------------//
+//---------Hamburger-Meneu-Clicking-Outside-to-close--------------------------------------------------//
 document.addEventListener('DOMContentLoaded', function() {
   const toggler = document.querySelector('.toggler');
   const menu = document.querySelector('.menu');
