@@ -1,4 +1,5 @@
 /*--------Visual-Arts-Gallery-Grid------*/
+
 /* General styles */
 body {
   font-family: Arial, sans-serif;
@@ -21,20 +22,34 @@ body {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* Ensures three images per line */
   gap: 15px;
   padding: 20px;
 }
 
+/* Container for the gallery item */
 .gallery-item {
   position: relative;
+  padding: 20px;
+  background: rgba(19, 20, 4, 0.531);
+  border-radius: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.592);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Style for the image within the gallery item */
 .gallery-item img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
+  border-radius: none;
+}
+
+/* Adding a hover effect */
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Copyright section styles */
