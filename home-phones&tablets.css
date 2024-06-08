@@ -237,4 +237,7 @@
   nav ul li a::after {
     background: rgb(88, 215, 198);
   }
+  .header2-png {
+    display: none;
+  }
 }
