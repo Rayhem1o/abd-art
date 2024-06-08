@@ -233,7 +233,7 @@ nav ul li a:hover::after {
 .services-list div {
   background: #26262660;
   padding: 40px;
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 300;
   border-radius: 10px;
   transition: background 0.5s, transform 0.5s;
@@ -243,14 +243,14 @@ nav ul li a:hover::after {
   margin-bottom: 30px;
 }
 .services-list div h2 {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 500;
   margin-bottom: 15px;
 }
 .services-list div a {
   text-decoration: none;
   color: white;
-  font-size: 12px;
+  font-size: 30px;
   margin-top: 20px;
   display: inline-block;
 }
@@ -298,7 +298,7 @@ nav ul li a:hover::after {
   flex-direction: column;
   padding: 0 40px;
   text-align: center;
-  font-size: 14px;
+  font-size: 30px;
   transition: height 0.7s;
 }
 .layer h3 {
@@ -309,7 +309,6 @@ nav ul li a:hover::after {
   margin-top: 20px;
   color: rgb(140, 17, 3);
   text-decoration: none;
-  font-size: 18px;
   line-height: 55px;
   background: white;
   width: 50px;
@@ -342,7 +341,7 @@ nav ul li a:hover::after {
   margin-right: 15px;
 }
 .social-icons a {
-  color: rgba(183, 52, 0, 0.638);
+  color: rgba(172, 25, 8, 0.834);
   text-decoration: none;
   margin-right: 5px;
   margin-top: 40px;

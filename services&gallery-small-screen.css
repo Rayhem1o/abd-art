@@ -78,7 +78,7 @@ body {
 .gallery-item {
   position: relative;
   padding: 30px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.668);
   border-radius: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.592);
   overflow: hidden;
