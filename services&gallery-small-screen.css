@@ -1,40 +1,37 @@
 /* Responsive design for small screens */
 @media only screen and (max-width: 1145px) {
-  #header {
-    background: rgba(
-      0,
-      0,
-      0,
-      0.5
-    ); /* Add this line for background color with transparency */
-  }
   #header2-and-header3 {
-    background: rgba(
-      0,
-      0,
-      0,
-      0.5
-    ); /* Add this line for background color with transparency */
-
-    top: 30px;
+    display: flex;
+    justify-content: center;
+    height: 90dvh;
+    position: relative;
+    bottom: 60px;
   }
   #header2 {
-    width: 100%;
-    top: 20px;
+    background: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Add this line for background color with transparency */
+    z-index: 5;
+    position: absolute;
   }
   .header2-text-S {
     position: absolute;
     top: 40%;
     width: 100%;
     text-align: center;
-    padding: 20px;
+    margin: 100px 0 0 0;
     color: white; /* Ensure the text color is readable */
   }
   .header2-text-S h1 {
+    margin: 0px 100px 0px 0px;
     font-size: 30px;
   }
   .header2-text-S p {
     font-size: 18px;
+    margin: 0px 100px 0px 0px;
     color: white;
   }
   #header3 {
