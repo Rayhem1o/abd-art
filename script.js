@@ -50,3 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+//script for arrow buttons//
+document.getElementById('scroll-to-sculptures').addEventListener('click', function() {
+  document.getElementById('sculpture').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('scroll-to-paintings').addEventListener('click', function() {
+  document.getElementById('paintings-sketches').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('scroll-to-text').addEventListener('click', function() {
+  document.getElementById('My Art').scrollIntoView({ behavior: 'smooth' });
+});

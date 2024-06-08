@@ -1,29 +1,6 @@
+/* Responsive design for small screens */
 @media only screen and (max-width: 1145px) {
-  body {
-    background-image: url(Images/Masyaf2N-copy.svg);
-  }
   #header {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    flex-wrap: wrap;
-    z-index: 100;
-    width: 100%;
-    height: 10dvh;
-    top: 0;
-  }
-  #header2-and-header3 {
-    display: flex;
-    justify-content: center;
-    height: 90dvh;
-    position: relative;
-  }
-  #header2 {
-    z-index: 5;
-    position: absolute;
-    height: 100%;
-    width: 100%;
     background: rgba(
       0,
       0,
@@ -31,24 +8,32 @@
       0.5
     ); /* Add this line for background color with transparency */
   }
-  .header2-text {
+  #header2-and-header3 {
+    background: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Add this line for background color with transparency */
+
+    top: 30px;
+  }
+  #header2 {
+    width: 100%;
+    top: 20px;
+  }
+  .header2-text-S {
     position: absolute;
     top: 40%;
     width: 100%;
     text-align: center;
     padding: 20px;
-    background: rgba(
-      0,
-      0,
-      0,
-      0.5
-    ); /* Add this line for background color with transparency */
     color: white; /* Ensure the text color is readable */
   }
-  .header2-text h1 {
+  .header2-text-S h1 {
     font-size: 30px;
   }
-  .header2-text p {
+  .header2-text-S p {
     font-size: 18px;
     color: white;
   }
@@ -56,16 +41,147 @@
     height: 100%;
   }
   .header3-png {
-    background-image: url(Images/8.png);
-    background-position: right;
-    width: 100%;
-    height: 100%;
     opacity: 0.5; /* Add this line to make the image less intense */
   }
 }
-/* Responsive design with a minimum width of 250px */
-@media (max-width: 767px) {
+
+@media (max-width: 1304px) {
+  .gallery-container {
+    flex-direction: column;
+    align-items: center;
+  }
   .gallery-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .scroll-button {
+    display: inline-block;
+    background-color: #ff0;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+}
+@media only screen and (max-width: 1441px) {
+  .toggler {
+    display: block;
+    z-index: 101;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .hamburger {
+    z-index: 100;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    height: 50px;
+    width: 50px;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger > div {
+    position: relative;
+    top: 10px;
+    right: 8px;
+    background: white;
+    height: 2px;
+    width: 60%;
+    transition: all 0.4s ease;
+  }
+
+  .hamburger > div::before,
+  .hamburger > div::after {
+    content: "";
+    position: absolute;
+    top: -7px;
+    background: white;
+    width: 100%;
+    height: 2px;
+    transition: all 0.4s ease;
+  }
+
+  .hamburger > div::after {
+    top: 7px;
+  }
+
+  .toggler:checked + .hamburger > div {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  .toggler:checked + .hamburger > div::before {
+    top: 0;
+    transform: rotate(45deg);
+    background: rgb(255, 255, 255);
+  }
+
+  .toggler:checked + .hamburger > div::after {
+    top: 0;
+    transform: rotate(135deg);
+    background: rgb(255, 255, 255);
+  }
+
+  .menu {
+    z-index: 99;
+    position: absolute;
+    background: rgba(172, 25, 8, 0.834);
+    right: 0;
+    width: 0;
+    height: 200vh;
+    transition: all 0.6s ease;
+  }
+
+  .toggler:checked ~ .menu {
+    width: 200px;
+  }
+  .menu > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    top: 130px;
+    right: 10px;
+    margin-right: 0;
+    visibility: hidden;
+  }
+  .menu > ul > li > a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    right: 5%;
+  }
+
+  .toggler:checked ~ .menu > ul {
+    transition: visibility 0.9s ease;
+    transition-delay: 0.3s;
+    visibility: visible;
+  }
+
+  .toggler:checked ~ .menu > ul > li > a:hover {
+    color: rgb(67, 168, 154);
+  }
+  nav ul li a::after {
+    background: rgb(88, 215, 198);
+  }
+
+  /* Divider for small screens */
+  .menu > ul > li.divider {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    margin: 10px 0;
   }
 }

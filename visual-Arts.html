@@ -19,7 +19,7 @@
 
 <body>
   <!-----------Home Section------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-  <div id="home">
+  <div id="My Art">
     <nav id="header">
       <input type="checkbox" class="toggler" />
       <div class="hamburger">
@@ -32,6 +32,9 @@
           <li><a href="index.html#services">Services</a></li>
           <li><a href="index.html#portfolio">Portfolio</a></li>
           <li><a href="index.html#contact">Contact</a></li>
+          <li class="divider"></li>
+          <li><a href="#paintings-sketches">Paintings</a></li>
+          <li><a href="#sculpture">Sculptures</a></li>
         </ul>
       </div>
     </nav>
@@ -64,14 +67,59 @@
     <!------Gallery Section---------------------------------------------------------------------->
     <div id="gallery">
       <h2>Gallery</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="Images/30.jpg" alt="Artwork 1"></div>
-        <div class="gallery-item"><img src="path-to-image2.jpg" alt="Artwork 2"></div>
-        <div class="gallery-item"><img src="path-to-image3.jpg" alt="Artwork 3"></div>
-        <div class="gallery-item"><img src="path-to-image4.jpg" alt="Artwork 4"></div>
-        <div class="gallery-item"><img src="path-to-image5.jpg" alt="Artwork 5"></div>
-        <div class="gallery-item"><img src="path-to-image6.jpg" alt="Artwork 6"></div>
-        <!-- Add more items as needed -->
+
+      <div class="gallery-container">
+        <div class="gallery-section" id="paintings-sketches">
+          <h3>Paintings & Sketches
+            <button id="scroll-to-sculptures" class="scroll-button">▼ Sculptures</button>
+          </h3>
+          <div class="gallery-grid">
+            <div class="gallery-item"><img src="Images/30.jpg" alt="Artwork 1"></div>
+            <div class="gallery-item"><img src="Images/27.jpg" alt="Artwork 2"></div>
+            <div class="gallery-item"><img src="Images/19.jpg" alt="Artwork 3"></div>
+            <div class="gallery-item"><img src="Images/20.jpg" alt="Artwork 4"></div>
+            <div class="gallery-item"><img src="Images/21.jpg" alt="Artwork 5"></div>
+            <div class="gallery-item"><img src="Images/22.jpg" alt="Artwork 6"></div>
+            <div class="gallery-item"><img src="Images/23.jpg" alt="Artwork 7"></div>
+            <div class="gallery-item"><img src="Images/29.jpg" alt="Artwork 8"></div>
+            <div class="gallery-item"><img src="Images/35.jpg" alt="Artwork 9"></div>
+            <div class="gallery-item"><img src="Images/18.jpg" alt="Artwork 10"></div>
+            <div class="gallery-item"><img src="Images/24.jpg" alt="Artwork 11"></div>
+            <div class="gallery-item"><img src="Images/25.jpg" alt="Artwork 12"></div>
+            <div class="gallery-item"><img src="Images/26.jpg" alt="Artwork 13"></div>
+            <div class="gallery-item"><img src="Images/28.jpg" alt="Artwork 14"></div>
+            <div class="gallery-item"><img src="Images/Abds Painting.jpg" alt="Artwork 15"></div>
+            <div class="gallery-item"><img src="Images/37.jpg" alt="Artwork 16"></div>
+            <div class="gallery-item"><img src="Images/Art12.jpg" alt="Artwork 17"></div>
+            <div class="gallery-item"><img src="Images/Art8.jpg" alt="Artwork 18"></div>
+            <div class="gallery-item"><img src="Images/Art3.jpg" alt="Artwork 19"></div>
+            <div class="gallery-item"><img src="Images/Art4.jpg" alt="Artwork 20"></div>
+            <div class="gallery-item"><img src="Images/Art6.jpg" alt="Artwork 21"></div>
+            <div class="gallery-item"><img src="Images/Art7.jpg" alt="Artwork 22"></div>
+            <div class="gallery-item"><img src="Images/Art9.jpg" alt="Artwork 23"></div>
+            <!-- Add more items as needed -->
+          </div>
+        </div>
+
+        <div class="gallery-section" id="sculpture">
+          <h3>Sculpture
+            <button id="scroll-to-paintings" class="scroll-button">▲ Paintings</button>
+            <button id="scroll-to-text" class="scroll-button">▲ Text</button>
+          </h3>
+          <div class="gallery-grid">
+            <div class="gallery-item"><img src="Images/Sculpture1.jpg" alt="Sculpture 1"></div>
+            <div class="gallery-item"><img src="Images/Sculpture2.jpg" alt="Sculpture 2"></div>
+            <div class="gallery-item"><img src="Images/Sculpture3.jpg" alt="Sculpture 3"></div>
+            <div class="gallery-item"><img src="Images/Sculpture4.jpg" alt="Sculpture 4"></div>
+            <div class="gallery-item"><img src="Images/Sculpture5.jpg" alt="Sculpture 5"></div>
+            <div class="gallery-item"><img src="Images/Sculpture6.jpg" alt="Sculpture 6"></div>
+            <div class="gallery-item"><img src="Images/Sculpture7.jpg" alt="Sculpture 7"></div>
+            <div class="gallery-item"><img src="Images/Sculpture8.jpg" alt="Sculpture 8"></div>
+            <div class="gallery-item"><img src="Images/Sculpture9.jpg" alt="Sculpture 9"></div>
+            <div class="gallery-item"><img src="Images/Sculpture10.jpg" alt="Sculpture 10"></div>
+            <!-- Add more items as needed -->
+          </div>
+        </div>
       </div>
     </div>
     <!------End of Gallery Section--------------------------->
@@ -86,6 +134,9 @@
     </p>
     </p>
   </div>
+  <!--Script sections------------------------------------------------------------------------------------->
+  <script src="scroll-buttons.js"></script>
+  <script src="/script.js"></script>
 
 </body>
 
