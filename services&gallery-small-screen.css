@@ -100,6 +100,7 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
+
 /* Modal styles */
 .modal {
   display: flex;
@@ -123,9 +124,10 @@ body {
 }
 
 .modal-image {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 80vh;
   cursor: zoom-in;
+  transition: transform 0.3s ease;
 }
 
 .close-button {
@@ -154,7 +156,7 @@ body {
   #header2-and-header3 {
     display: flex;
     justify-content: center;
-    height: 100dvh;
+    height: 100vh;
     position: relative;
     bottom: 70px;
   }

@@ -102,17 +102,66 @@ function createModal(imageSrc) {
     }
   });
 
+  // Prevent default drag behavior
+  modalImage.addEventListener('dragstart', function(event) {
+    event.preventDefault();
+  });
+
   // Zoom functionality
   let zoomed = false;
-  modalImage.addEventListener('click', function() {
+  let isDragging = false;
+  let startX, startY, initialLeft, initialTop;
+
+  modalImage.addEventListener('click', function(event) {
+    if (!zoomed) {
+      modalImage.style.transform = 'scale(2)'; // Adjust the zoom level as needed
+      modalImage.style.cursor = 'move';
+      zoomed = true;
+    }
+  });
+
+  modalImage.addEventListener('dblclick', function() {
     if (zoomed) {
       modalImage.style.transform = 'scale(1)';
-      modalImage.classList.remove('zoom-in');
+      modalImage.style.left = '0px';
+      modalImage.style.top = '0px';
+      modalImage.style.position = 'static';
+      modalImage.style.cursor = 'zoom-in';
       zoomed = false;
-    } else {
-      modalImage.style.transform = 'scale(2)';
-      modalImage.classList.add('zoom-in');
-      zoomed = true;
+    }
+  });
+
+  modalImage.addEventListener('mousedown', function(event) {
+    if (zoomed) {
+      isDragging = true;
+      startX = event.clientX;
+      startY = event.clientY;
+      initialLeft = modalImage.offsetLeft;
+      initialTop = modalImage.offsetTop;
+      modalImage.style.cursor = 'grabbing';
+      event.preventDefault(); // Prevent default behavior
+    }
+  });
+
+  modalImage.addEventListener('mouseup', function() {
+    isDragging = false;
+    modalImage.style.cursor = 'move';
+  });
+
+  modalImage.addEventListener('mousemove', function(event) {
+    if (isDragging) {
+      const offsetX = event.clientX - startX;
+      const offsetY = event.clientY - startY;
+      modalImage.style.left = `${initialLeft + offsetX}px`;
+      modalImage.style.top = `${initialTop + offsetY}px`;
+      modalImage.style.position = 'absolute';
+    }
+  });
+
+  modalImage.addEventListener('mouseleave', function() {
+    if (isDragging) {
+      isDragging = false;
+      modalImage.style.cursor = 'move';
     }
   });
 }
@@ -129,3 +178,5 @@ function initImageClick() {
 
 // Initialize the click event listeners on page load
 document.addEventListener('DOMContentLoaded', initImageClick);
+
+
