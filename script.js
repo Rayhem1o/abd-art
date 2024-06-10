@@ -178,5 +178,3 @@ function initImageClick() {
 
 // Initialize the click event listeners on page load
 document.addEventListener('DOMContentLoaded', initImageClick);
-
-
