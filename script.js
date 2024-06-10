@@ -91,37 +91,38 @@ function createModal(imageSrc) {
   document.body.appendChild(modal);
 
   // Event listener to close button
-  closeButton.addEventListener('click', function() {
+  closeButton.addEventListener('click', function () {
     modal.remove();
   });
 
   // Event listener to modal for closing when clicking outside content
-  modal.addEventListener('click', function(event) {
+  modal.addEventListener('click', function (event) {
     if (event.target === modal) {
       modal.remove();
     }
   });
 
   // Prevent default drag behavior
-  modalImage.addEventListener('dragstart', function(event) {
+  modalImage.addEventListener('dragstart', function (event) {
     event.preventDefault();
   });
 
-  // Zoom functionality
+  // Variables for zoom and drag functionality
   let zoomed = false;
   let isDragging = false;
   let startX, startY, initialLeft, initialTop;
 
-  modalImage.addEventListener('click', function(event) {
+  modalImage.addEventListener('dblclick', function (event) {
     if (!zoomed) {
+      const rect = modalImage.getBoundingClientRect();
+      const offsetX = event.clientX - rect.left;
+      const offsetY = event.clientY - rect.top;
+      modalImage.style.transformOrigin = `${offsetX}px ${offsetY}px`;
       modalImage.style.transform = 'scale(2)'; // Adjust the zoom level as needed
       modalImage.style.cursor = 'move';
+      modalImage.style.position = 'absolute';
       zoomed = true;
-    }
-  });
-
-  modalImage.addEventListener('dblclick', function() {
-    if (zoomed) {
+    } else {
       modalImage.style.transform = 'scale(1)';
       modalImage.style.left = '0px';
       modalImage.style.top = '0px';
@@ -131,7 +132,7 @@ function createModal(imageSrc) {
     }
   });
 
-  modalImage.addEventListener('mousedown', function(event) {
+  modalImage.addEventListener('mousedown', function (event) {
     if (zoomed) {
       isDragging = true;
       startX = event.clientX;
@@ -143,22 +144,21 @@ function createModal(imageSrc) {
     }
   });
 
-  modalImage.addEventListener('mouseup', function() {
+  modalImage.addEventListener('mouseup', function () {
     isDragging = false;
     modalImage.style.cursor = 'move';
   });
 
-  modalImage.addEventListener('mousemove', function(event) {
+  modalImage.addEventListener('mousemove', function (event) {
     if (isDragging) {
       const offsetX = event.clientX - startX;
       const offsetY = event.clientY - startY;
       modalImage.style.left = `${initialLeft + offsetX}px`;
       modalImage.style.top = `${initialTop + offsetY}px`;
-      modalImage.style.position = 'absolute';
     }
   });
 
-  modalImage.addEventListener('mouseleave', function() {
+  modalImage.addEventListener('mouseleave', function () {
     if (isDragging) {
       isDragging = false;
       modalImage.style.cursor = 'move';
@@ -169,8 +169,8 @@ function createModal(imageSrc) {
 // To initialize the image click event listeners
 function initImageClick() {
   const galleryItems = document.querySelectorAll('.gallery-item img');
-  galleryItems.forEach(function(item) {
-    item.addEventListener('click', function() {
+  galleryItems.forEach(function (item) {
+    item.addEventListener('click', function () {
       createModal(item.src);
     });
   });
