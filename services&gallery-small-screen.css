@@ -5,6 +5,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
 /* Base Styles */
 .header2-text-S {
   position: absolute;
@@ -13,15 +14,18 @@ body {
   padding: 10px 0 7% 0;
   font-size: 30px;
 }
+
 .header2-text-S h1 {
   font-size: 60px;
   margin-top: 40px;
   color: rgba(233, 254, 0, 0.891);
 }
+
 .header2-text-S p {
   color: white;
   font-size: 20px;
 }
+
 .Status {
   position: absolute;
   top: 80%;
@@ -30,6 +34,7 @@ body {
   font-size: 12px;
   color: rgb(201, 247, 201);
 }
+
 /* Gallery styles */
 #gallery {
   padding: 20px;
@@ -58,20 +63,16 @@ body {
 
 .gallery-section {
   flex: 1;
-  margin: 0 10px;
+  margin: 0 30px;
 }
 
 .gallery-grid {
   display: grid;
-  gap: 15px;
+  gap: 5px;
   padding: 20px;
-}
-
-/* Ensures three images per line on larger screens */
-@media (min-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  max-height: 600px; /* Set maximum height for scrollable grid */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-bottom: 100px;
 }
 
 /* Container for the gallery item */
@@ -80,7 +81,7 @@ body {
   padding: 30px;
   background: rgba(0, 0, 0, 0.668);
   border-radius: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.592);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.241);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -97,6 +98,55 @@ body {
 .gallery-item:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+/* Modal styles */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.908);
+}
+
+.modal-content {
+  position: relative;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.zoom-in {
+  cursor: zoom-out;
+}
+
+/* Ensures three images per line on larger screens */
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Responsive design for small screens */
@@ -108,11 +158,13 @@ body {
     position: relative;
     bottom: 70px;
   }
+
   #header2 {
     background: rgba(0, 0, 0, 0.5);
     z-index: 5;
     position: absolute;
   }
+
   .header2-text-S {
     position: absolute;
     top: 20%;
@@ -121,21 +173,26 @@ body {
     margin: 100px 0 0 0;
     color: white;
   }
+
   .header2-text-S h1 {
     margin: 0 70px 0 0;
     font-size: 50px;
   }
+
   .header2-text-S p {
     font-size: 18px;
     margin: 0 70px 0 0;
     color: white;
   }
+
   #header3 {
     height: 100%;
   }
+
   .header3-png {
     opacity: 0.5;
   }
+
   .Status {
     top: 80%;
   }
@@ -146,9 +203,11 @@ body {
     flex-direction: column;
     align-items: center;
   }
+
   .gallery-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+
   .scroll-button {
     display: inline-block;
     background-color: rgba(174, 20, 3, 0.626);
@@ -193,8 +252,8 @@ body {
     position: relative;
     top: 10px;
     right: 8px;
-    background: white;
-    height: 2px;
+    background: rgba(233, 254, 0, 0.891);
+    height: 3px;
     width: 60%;
     transition: all 0.4s ease;
   }
@@ -204,9 +263,9 @@ body {
     content: "";
     position: absolute;
     top: -7px;
-    background: white;
+    background: rgba(233, 254, 0, 0.891);
     width: 100%;
-    height: 2px;
+    height: 3px;
     transition: all 0.4s ease;
   }
 
@@ -221,13 +280,13 @@ body {
   .toggler:checked + .hamburger > div::before {
     top: 0;
     transform: rotate(45deg);
-    background: rgb(255, 255, 255);
+    background: rgba(233, 254, 0, 0.891);
   }
 
   .toggler:checked + .hamburger > div::after {
     top: 0;
     transform: rotate(135deg);
-    background: rgb(255, 255, 255);
+    background: rgba(233, 254, 0, 0.891);
   }
 
   .menu {
@@ -243,6 +302,7 @@ body {
   .toggler:checked ~ .menu {
     width: 200px;
   }
+
   .menu > ul {
     display: flex;
     flex-direction: column;
@@ -253,6 +313,7 @@ body {
     margin-right: 0;
     visibility: hidden;
   }
+
   .menu > ul > li > a {
     color: white;
     text-decoration: none;
@@ -269,6 +330,7 @@ body {
   .toggler:checked ~ .menu > ul > li > a:hover {
     color: rgb(67, 168, 154);
   }
+
   nav ul li a::after {
     background: rgb(88, 215, 198);
   }
@@ -283,6 +345,7 @@ body {
     margin-bottom: auto;
   }
 }
+
 @media only screen and (min-width: 1146px) {
   #scroll-to-sculptures,
   #scroll-to-paintings,

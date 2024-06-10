@@ -62,3 +62,70 @@ document.getElementById('scroll-to-paintings').addEventListener('click', functio
 document.getElementById('scroll-to-text').addEventListener('click', function() {
   document.getElementById('My Art').scrollIntoView({ behavior: 'smooth' });
 });
+
+//-------JavaScript to handle the image click event and display the image in a larger size---------//
+
+// Function to create a modal
+function createModal(imageSrc) {
+  // Modal elements
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  const modalContent = document.createElement('div');
+  modalContent.classList.add('modal-content');
+
+  const closeButton = document.createElement('span');
+  closeButton.classList.add('close-button');
+  closeButton.innerHTML = '&times;';
+
+  const modalImage = document.createElement('img');
+  modalImage.src = imageSrc;
+  modalImage.classList.add('modal-image');
+
+  // Append elements to modal
+  modalContent.appendChild(closeButton);
+  modalContent.appendChild(modalImage);
+  modal.appendChild(modalContent);
+
+  // Append modal to body
+  document.body.appendChild(modal);
+
+  // Event listener to close button
+  closeButton.addEventListener('click', function() {
+    modal.remove();
+  });
+
+  // Event listener to modal for closing when clicking outside content
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.remove();
+    }
+  });
+
+  // Zoom functionality
+  let zoomed = false;
+  modalImage.addEventListener('click', function() {
+    if (zoomed) {
+      modalImage.style.transform = 'scale(1)';
+      modalImage.classList.remove('zoom-in');
+      zoomed = false;
+    } else {
+      modalImage.style.transform = 'scale(2)';
+      modalImage.classList.add('zoom-in');
+      zoomed = true;
+    }
+  });
+}
+
+// To initialize the image click event listeners
+function initImageClick() {
+  const galleryItems = document.querySelectorAll('.gallery-item img');
+  galleryItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      createModal(item.src);
+    });
+  });
+}
+
+// Initialize the click event listeners on page load
+document.addEventListener('DOMContentLoaded', initImageClick);
