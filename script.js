@@ -74,26 +74,16 @@ function createModal(imageSrc) {
   const modalContent = document.createElement('div');
   modalContent.classList.add('modal-content');
 
-  const closeButton = document.createElement('span');
-  closeButton.classList.add('close-button');
-  closeButton.innerHTML = '&times;';
-
   const modalImage = document.createElement('img');
   modalImage.src = imageSrc;
   modalImage.classList.add('modal-image');
 
   // Append elements to modal
-  modalContent.appendChild(closeButton);
   modalContent.appendChild(modalImage);
   modal.appendChild(modalContent);
 
   // Append modal to body
   document.body.appendChild(modal);
-
-  // Event listener to close button
-  closeButton.addEventListener('click', function () {
-    modal.remove();
-  });
 
   // Event listener to modal for closing when clicking outside content
   modal.addEventListener('click', function (event) {
@@ -118,17 +108,18 @@ function createModal(imageSrc) {
     const offsetY = event.clientY - rect.top;
 
     if (!zoomed) {
-      modalImage.style.transformOrigin = `center center`;
+      modalImage.style.transformOrigin = `${offsetX}px ${offsetY}px`;
       modalImage.style.transform = 'scale(2)'; // Adjust the zoom level as needed
       modalImage.style.cursor = 'move';
       modalImage.style.position = 'absolute';
-      modalImage.style.left = '50%';
-      modalImage.style.top = '50%';
-      modalImage.style.transform = 'translate(-50%, -50%) scale(2)';
       zoomed = true;
     } else {
+      modalImage.style.transformOrigin = 'center center';
+      modalImage.style.transform = 'scale(1)';
+      modalImage.style.left = '50%';
+      modalImage.style.top = '50%';
       modalImage.style.transform = 'translate(-50%, -50%) scale(1)';
-      modalImage.style.cursor = 'zoom-in';
+      modalImage.style.cursor = 'move';
       zoomed = false;
     }
   });
@@ -145,7 +136,7 @@ function createModal(imageSrc) {
 
   modalImage.addEventListener('mouseup', function () {
     isDragging = false;
-    modalImage.style.cursor = zoomed ? 'move' : 'zoom-in';
+    modalImage.style.cursor = zoomed ? 'move' : 'default';
   });
 
   modalImage.addEventListener('mousemove', function (event) {
@@ -160,7 +151,7 @@ function createModal(imageSrc) {
   modalImage.addEventListener('mouseleave', function () {
     if (isDragging) {
       isDragging = false;
-      modalImage.style.cursor = zoomed ? 'move' : 'zoom-in';
+      modalImage.style.cursor = zoomed ? 'move' : 'default';
     }
   });
 }
@@ -177,5 +168,3 @@ function initImageClick() {
 
 // Initialize the click event listeners on page load
 document.addEventListener('DOMContentLoaded', initImageClick);
-
-
