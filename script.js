@@ -113,40 +113,39 @@ function createModal(imageSrc) {
   let startX, startY, initialLeft, initialTop;
 
   modalImage.addEventListener('dblclick', function (event) {
+    const rect = modalImage.getBoundingClientRect();
+    const offsetX = event.clientX - rect.left;
+    const offsetY = event.clientY - rect.top;
+
     if (!zoomed) {
-      const rect = modalImage.getBoundingClientRect();
-      const offsetX = event.clientX - rect.left;
-      const offsetY = event.clientY - rect.top;
-      modalImage.style.transformOrigin = `${offsetX}px ${offsetY}px`;
+      modalImage.style.transformOrigin = `center center`;
       modalImage.style.transform = 'scale(2)'; // Adjust the zoom level as needed
       modalImage.style.cursor = 'move';
       modalImage.style.position = 'absolute';
+      modalImage.style.left = '50%';
+      modalImage.style.top = '50%';
+      modalImage.style.transform = 'translate(-50%, -50%) scale(2)';
       zoomed = true;
     } else {
-      modalImage.style.transform = 'scale(1)';
-      modalImage.style.left = '0px';
-      modalImage.style.top = '0px';
-      modalImage.style.position = 'static';
+      modalImage.style.transform = 'translate(-50%, -50%) scale(1)';
       modalImage.style.cursor = 'zoom-in';
       zoomed = false;
     }
   });
 
   modalImage.addEventListener('mousedown', function (event) {
-    if (zoomed) {
-      isDragging = true;
-      startX = event.clientX;
-      startY = event.clientY;
-      initialLeft = modalImage.offsetLeft;
-      initialTop = modalImage.offsetTop;
-      modalImage.style.cursor = 'grabbing';
-      event.preventDefault(); // Prevent default behavior
-    }
+    isDragging = true;
+    startX = event.clientX;
+    startY = event.clientY;
+    initialLeft = parseFloat(modalImage.style.left) || 0;
+    initialTop = parseFloat(modalImage.style.top) || 0;
+    modalImage.style.cursor = 'grabbing';
+    event.preventDefault(); // Prevent default behavior
   });
 
   modalImage.addEventListener('mouseup', function () {
     isDragging = false;
-    modalImage.style.cursor = 'move';
+    modalImage.style.cursor = zoomed ? 'move' : 'zoom-in';
   });
 
   modalImage.addEventListener('mousemove', function (event) {
@@ -161,7 +160,7 @@ function createModal(imageSrc) {
   modalImage.addEventListener('mouseleave', function () {
     if (isDragging) {
       isDragging = false;
-      modalImage.style.cursor = 'move';
+      modalImage.style.cursor = zoomed ? 'move' : 'zoom-in';
     }
   });
 }
@@ -178,3 +177,5 @@ function initImageClick() {
 
 // Initialize the click event listeners on page load
 document.addEventListener('DOMContentLoaded', initImageClick);
+
+
