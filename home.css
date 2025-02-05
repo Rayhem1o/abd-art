@@ -54,7 +54,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  line-height: 2.2;
+  line-height: 2;
   cursor: pointer;
   padding: 5px;
   transition: background-color 0.3s;
