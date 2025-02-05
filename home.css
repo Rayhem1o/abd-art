@@ -37,7 +37,7 @@ body {
 }
 
 .lang-menu {
-  width: 110px; /* Adjust width as needed */
+  width: 160px; /* Adjust width as needed */
   top: 18px;
   right: 150px;
   text-align: right;
@@ -84,7 +84,7 @@ body {
   margin: 0;
   padding: 0;
   display: none;
-  background-color: rgba(93, 161, 152, 0.529);
+  background-color: rgba(19, 42, 39, 0.636);
   border: 1px solid #0300004e;
   position: absolute;
   top: 46px;
@@ -110,8 +110,8 @@ body {
 .menu-container ul li a {
   text-decoration: none;
   font-size: medium;
-  width: 150px;
-  padding: 5px 20px;
+  width: 160px;
+  padding: 2px 20px;
   display: block;
 }
 
