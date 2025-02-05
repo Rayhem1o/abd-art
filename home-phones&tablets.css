@@ -4,7 +4,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 1145px) {
+@media only screen and (max-width: 1500px) {
   body {
     background-image: url(Images/Masyaf2N-copy.svg);
   }
@@ -32,6 +32,15 @@
     z-index: 5;
     position: absolute;
     height: 100%;
+  }
+
+  .lang-menu {
+    width: 100px; /* Adjust width as needed */
+    top: 24px;
+    right: 150px;
+    text-align: right;
+    font-weight: bold;
+    position: absolute;
   }
 
   .header2-text {
